@@ -150,20 +150,28 @@
         .mode-toggle:hover {
             transform: scale(1.1);
         }
-
-        /* Search Bar */
         .search-bar {
-            padding: 12px;
-            border-radius: 10px;
-            width: 80%;
-            font-size: 16px;
-            margin: 10px auto;
-            display: block;
-            outline: none;
-        }
-        .search-bar:hover {
-            transform: scale(1.05);
-        }
+    display: block;
+    width: 60%;
+    max-width: 600px;
+    margin: 20px auto; /* Upar aur neeche thoda zyada gap dene ke liye */
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 15px;
+    border: 2px solid #131111;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.search-bar:hover, 
+.search-bar:focus {
+    transform: scale(1.05);
+    border-color: #76c893;
+    box-shadow: 0 0 15px rgba(118, 200, 147, 0.5);
+}
+.categories-container {
+    margin-top: 30px; /* Search bar aur categories ke beech extra space */
+}
+
 
         /* Categories */
         .categories {
@@ -206,16 +214,27 @@
     </style>
 </head>
 <body class="light-mode">
+
     <div class="header">
         <!-- Top Right Buttons -->
         <div class="top-right-buttons">
             <button class="top-button new-button">Contact us</button>
             <button class="top-button mode-toggle" onclick="toggleMode()">Switch Mode</button>
         </div>
-        
+
+        <!-- Search Bar (Moved Above "Homepage") -->
         <input class="search-bar" type="search" placeholder="Search articles..." oninput="searchArticles(this.value)">
-        Homepage
     </div>
+
+    <div class="categories-container">
+        <div class="categories" id="categories"></div>
+    </div>
+
+    <div class="container" id="articles"></div>
+
+
+
+
 
 
 
